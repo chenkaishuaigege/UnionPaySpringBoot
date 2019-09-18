@@ -1,0 +1,16 @@
+# ZIP路径
+zip:
+  zipPath: /Users/chenkai/IdeaProjects/SP-GIT/xservice/src/main/webapp/zips/
+  webPath: /Users/chenkai/IdeaProjects/SP-GIT/xservice/src/main/webapp/web/
+  foldersOrFiles: 1
+
+# 服务器
+server:
+  port: 9999 # 服务绑定的端口，不写默认是8080
+  servlet:
+    context-path: /xservice # 服务的路径，不写默认为空
+
+#加载文件
+fileUpload:
+  rootSavePath: file:/Users/chenkai/Youdao/FILE/photo_file/
+  rootPathPattrens: /images/**
