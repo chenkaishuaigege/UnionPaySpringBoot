@@ -42,7 +42,7 @@ public class UnionPayServiceImpl implements IUnionPayService {
         System.out.println("发送online message 信息:");
         System.out.println(onlineMessage);
         //签名
-        String headerSign = JWTUtil.jwsSignature(onlineMessage);
+        String headerSign = JWTUtil.jwsSignature(Constant.NETWORK_TYPE_APP_GATEWAY,onlineMessage);
         //获取Service_URL_suffix
         String service_URL_suffix = ConversionUtil.msgTypeToUrlSuffix(msgInfo.getMsgType());
         if(StrUtil.isEmpty(service_URL_suffix)){
@@ -56,7 +56,7 @@ public class UnionPayServiceImpl implements IUnionPayService {
         System.out.println(resultMessage);
         if (!JavaUtil.isEmpty(upi_jws)) {
             //验签
-            boolean attestationResult = jwsAttestation(resultMessage, upi_jws);
+            boolean attestationResult = jwsAttestation(Constant.NETWORK_TYPE_APP_GATEWAY,resultMessage, upi_jws);
             if(!attestationResult){
                 throw new Exception("Signature verification failed and data was tampered with!");
             }

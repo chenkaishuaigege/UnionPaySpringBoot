@@ -27,7 +27,8 @@ public class ProConst {
 		try {
 		if (pps == null) {
 				pps = new Properties();
-				final String PATH = "/Users/chenkai/IdeaProjects/Spring/UnionpayV_1/src/main/resources/configuration.properties";
+				// TODO
+				final String PATH = "D:\\IDEAWorkSpaces\\UnionPaySpringBoot\\UnionPaySpringBoot\\src\\main\\resources\\configuration_win.properties";
 				pps.load(new FileInputStream(PATH));
 		}
 		} catch (IOException e) {

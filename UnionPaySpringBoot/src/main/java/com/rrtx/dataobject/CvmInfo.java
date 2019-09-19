@@ -161,4 +161,9 @@ public class CvmInfo implements Serializable {
     public String getIdCountry() {
         return idCountry;
     }
+
+    @Override
+    public String toString() {
+        return "{" + "pan='" + pan + '\'' + ", accountNo='" + accountNo + '\'' + ", expiryDate='" + expiryDate + '\'' + ", cvn2='" + cvn2 + '\'' + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", idType='" + idType + '\'' + ", idNo='" + idNo + '\'' + ", mobileNo='" + mobileNo + '\'' + ", idCountry='" + idCountry + '\'' + '}';
+    }
 }

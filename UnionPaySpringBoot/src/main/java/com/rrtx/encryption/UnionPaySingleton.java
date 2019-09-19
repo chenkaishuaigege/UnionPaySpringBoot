@@ -4,18 +4,23 @@ import com.rrtx.util.ProConst;
 
 public class UnionPaySingleton {
 
-    static String union_url;
-    static String upi_appid;
-    static String upi_certid;
-    static String kid_encryption;
-    static String kid_signature;
-
-    static String scis_encryption_public_file;
-    static String scis_attestation_public_file;
-    static String getway_decryption_private_file;
-    static String getway_decryption_private_str;
-    static String getway_signature_private_file;
-    static String getway_signature_private_str;
+    public static String gateway_encryption_public_file;
+    public static String gateway_attestation_public_file;
+    public static String account_encryption_public_file;
+    public static String account_attestation_public_file;
+    public static String gateway_decryption_private_file;
+    public static String gateway_decryption_private_str;
+    public static String gateway_signature_private_file;
+    public static String gateway_signature_private_str;
+    public static String account_decryption_private_file;
+    public static String account_decryption_private_str;
+    public static String account_signature_private_file;
+    public static String account_signature_private_str;
+    public static String union_url;
+    public static String upi_appid;
+    public static String upi_certid;
+    public static String kid_encryption;
+    public static String kid_signature;
 
 
 
@@ -28,12 +33,18 @@ public class UnionPaySingleton {
     private static synchronized void syncInit(){
         System.out.println("初始化对象");
         if(unionPaySingleton == null){
-            scis_encryption_public_file = ProConst.getValue("scis_encryption_public_file");
-            scis_attestation_public_file = ProConst.getValue("scis_attestation_public_file");
-            getway_decryption_private_file = ProConst.getValue("getway_decryption_private_file");
-            getway_decryption_private_str = ProConst.getValue("getway_decryption_private_str");
-            getway_signature_private_file = ProConst.getValue("getway_signature_private_file");
-            getway_signature_private_str = ProConst.getValue("getway_signature_private_str");
+            gateway_encryption_public_file = ProConst.getValue("gateway_encryption_public_file");
+            gateway_attestation_public_file = ProConst.getValue("gateway_attestation_public_file");
+            account_encryption_public_file = ProConst.getValue("account_encryption_public_file");
+            account_attestation_public_file = ProConst.getValue("account_attestation_public_file");
+            gateway_decryption_private_file = ProConst.getValue("gateway_decryption_private_file");
+            gateway_decryption_private_str = ProConst.getValue("gateway_decryption_private_str");
+            gateway_signature_private_file = ProConst.getValue("gateway_signature_private_file");
+            gateway_signature_private_str = ProConst.getValue("gateway_signature_private_str");
+            account_decryption_private_file = ProConst.getValue("account_decryption_private_file");
+            account_decryption_private_str = ProConst.getValue("account_decryption_private_str");
+            account_signature_private_file = ProConst.getValue("account_signature_private_file");
+            account_signature_private_str = ProConst.getValue("account_signature_private_str");
             union_url = ProConst.getValue("union_url");
             upi_appid = ProConst.getValue("upi_appid");
             upi_certid = ProConst.getValue("upi_certid");
@@ -41,12 +52,18 @@ public class UnionPaySingleton {
             kid_signature = ProConst.getValue("kid_signature");
 
             unionPaySingleton = new UnionPaySingleton();
-            unionPaySingleton.setScis_encryption_public_file(scis_encryption_public_file);
-            unionPaySingleton.setScis_attestation_public_file(scis_attestation_public_file);
-            unionPaySingleton.setGetway_decryption_private_file(getway_decryption_private_file);
-            unionPaySingleton.setGetway_decryption_private_str(getway_decryption_private_str);
-            unionPaySingleton.setGetway_signature_private_file(getway_signature_private_file);
-            unionPaySingleton.setGetway_signature_private_str(getway_signature_private_str);
+            unionPaySingleton.setGateway_encryption_public_file(gateway_encryption_public_file);
+            unionPaySingleton.setGateway_attestation_public_file(gateway_attestation_public_file);
+            unionPaySingleton.setAccount_encryption_public_file(account_encryption_public_file);
+            unionPaySingleton.setAccount_attestation_public_file(account_attestation_public_file);
+            unionPaySingleton.setGateway_decryption_private_file(gateway_decryption_private_file);
+            unionPaySingleton.setGateway_decryption_private_str(gateway_decryption_private_str);
+            unionPaySingleton.setGateway_signature_private_file(gateway_signature_private_file);
+            unionPaySingleton.setGateway_signature_private_str(gateway_signature_private_str);
+            unionPaySingleton.setAccount_decryption_private_file(account_decryption_private_file);
+            unionPaySingleton.setAccount_decryption_private_str(account_decryption_private_str);
+            unionPaySingleton.setAccount_signature_private_file(account_signature_private_file);
+            unionPaySingleton.setAccount_signature_private_str(account_signature_private_str);
             unionPaySingleton.setUnion_url(union_url);
             unionPaySingleton.setUpi_appid(upi_appid);
             unionPaySingleton.setUpi_certid(upi_certid);
@@ -61,6 +78,102 @@ public class UnionPaySingleton {
             syncInit();
         }
         return unionPaySingleton;
+    }
+
+    public String getGateway_encryption_public_file() {
+        return gateway_encryption_public_file;
+    }
+
+    private void setGateway_encryption_public_file(String gateway_encryption_public_file) {
+        UnionPaySingleton.gateway_encryption_public_file = gateway_encryption_public_file;
+    }
+
+    public String getGateway_attestation_public_file() {
+        return gateway_attestation_public_file;
+    }
+
+    private void setGateway_attestation_public_file(String gateway_attestation_public_file) {
+        UnionPaySingleton.gateway_attestation_public_file = gateway_attestation_public_file;
+    }
+
+    public String getAccount_encryption_public_file() {
+        return account_encryption_public_file;
+    }
+
+    private void setAccount_encryption_public_file(String account_encryption_public_file) {
+        UnionPaySingleton.account_encryption_public_file = account_encryption_public_file;
+    }
+
+    public String getAccount_attestation_public_file() {
+        return account_attestation_public_file;
+    }
+
+    private void setAccount_attestation_public_file(String account_attestation_public_file) {
+        UnionPaySingleton.account_attestation_public_file = account_attestation_public_file;
+    }
+
+    public String getGateway_decryption_private_file() {
+        return gateway_decryption_private_file;
+    }
+
+    private void setGateway_decryption_private_file(String gateway_decryption_private_file) {
+        UnionPaySingleton.gateway_decryption_private_file = gateway_decryption_private_file;
+    }
+
+    public String getGateway_decryption_private_str() {
+        return gateway_decryption_private_str;
+    }
+
+    private void setGateway_decryption_private_str(String gateway_decryption_private_str) {
+        UnionPaySingleton.gateway_decryption_private_str = gateway_decryption_private_str;
+    }
+
+    public String getGateway_signature_private_file() {
+        return gateway_signature_private_file;
+    }
+
+    private void setGateway_signature_private_file(String gateway_signature_private_file) {
+        UnionPaySingleton.gateway_signature_private_file = gateway_signature_private_file;
+    }
+
+    public String getGateway_signature_private_str() {
+        return gateway_signature_private_str;
+    }
+
+    private void setGateway_signature_private_str(String gateway_signature_private_str) {
+        UnionPaySingleton.gateway_signature_private_str = gateway_signature_private_str;
+    }
+
+    public String getAccount_decryption_private_file() {
+        return account_decryption_private_file;
+    }
+
+    private void setAccount_decryption_private_file(String account_decryption_private_file) {
+        UnionPaySingleton.account_decryption_private_file = account_decryption_private_file;
+    }
+
+    public String getAccount_decryption_private_str() {
+        return account_decryption_private_str;
+    }
+
+    private void setAccount_decryption_private_str(String account_decryption_private_str) {
+        UnionPaySingleton.account_decryption_private_str = account_decryption_private_str;
+    }
+
+    public String getAccount_signature_private_file() {
+        return account_signature_private_file;
+    }
+
+    private void setAccount_signature_private_file(String account_signature_private_file) {
+        UnionPaySingleton.account_signature_private_file = account_signature_private_file;
+    }
+
+    public String getAccount_signature_private_str() {
+        return account_signature_private_str;
+    }
+
+    private void setAccount_signature_private_str(String account_signature_private_str) {
+        UnionPaySingleton.account_signature_private_str = account_signature_private_str;
     }
 
     public String getUnion_url() {
@@ -87,59 +200,11 @@ public class UnionPaySingleton {
         UnionPaySingleton.upi_certid = upi_certid;
     }
 
-    public String getScis_encryption_public_file() {
-        return scis_encryption_public_file;
-    }
-
-    private void setScis_encryption_public_file(String scis_encryption_public_file) {
-        UnionPaySingleton.scis_encryption_public_file = scis_encryption_public_file;
-    }
-
-    public String getScis_attestation_public_file() {
-        return scis_attestation_public_file;
-    }
-
-    private void setScis_attestation_public_file(String scis_attestation_public_file) {
-        UnionPaySingleton.scis_attestation_public_file = scis_attestation_public_file;
-    }
-
-    public String getGetway_decryption_private_file() {
-        return getway_decryption_private_file;
-    }
-
-    private void setGetway_decryption_private_file(String getway_decryption_private_file) {
-        UnionPaySingleton.getway_decryption_private_file = getway_decryption_private_file;
-    }
-
-    public String getGetway_decryption_private_str() {
-        return getway_decryption_private_str;
-    }
-
-    private void setGetway_decryption_private_str(String getway_decryption_private_str) {
-        UnionPaySingleton.getway_decryption_private_str = getway_decryption_private_str;
-    }
-
-    public String getGetway_signature_private_file() {
-        return getway_signature_private_file;
-    }
-
-    private void setGetway_signature_private_file(String getway_signature_private_file) {
-        UnionPaySingleton.getway_signature_private_file = getway_signature_private_file;
-    }
-
-    public String getGetway_signature_private_str() {
-        return getway_signature_private_str;
-    }
-
-    private void setGetway_signature_private_str(String getway_signature_private_str) {
-        UnionPaySingleton.getway_signature_private_str = getway_signature_private_str;
-    }
-
     public String getKid_encryption() {
         return kid_encryption;
     }
 
-    public void setKid_encryption(String kid_encryption) {
+    private void setKid_encryption(String kid_encryption) {
         UnionPaySingleton.kid_encryption = kid_encryption;
     }
 
@@ -147,7 +212,7 @@ public class UnionPaySingleton {
         return kid_signature;
     }
 
-    public void setKid_signature(String kid_signature) {
+    private void setKid_signature(String kid_signature) {
         UnionPaySingleton.kid_signature = kid_signature;
     }
 

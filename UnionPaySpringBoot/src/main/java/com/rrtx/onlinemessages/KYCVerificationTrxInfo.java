@@ -2,7 +2,9 @@ package com.rrtx.onlinemessages;
 
 
 import com.rrtx.dataobject.CvmInfo;
+import com.rrtx.util.Constant;
 import com.rrtx.util.JWTUtil;
+import com.rrtx.util.JavaUtil;
 import com.rrtx.util.SerializeUtil;
 
 import java.io.Serializable;
@@ -57,7 +59,7 @@ public class KYCVerificationTrxInfo implements Serializable {
         }
         public Builder setCvmInfo(CvmInfo cvmInfo_) {
             String cvmInfoStr = SerializeUtil.serialize(cvmInfo_);
-            String cvmInfoStrEnc = JWTUtil.jweEncryptionNew(cvmInfoStr);
+            String cvmInfoStrEnc = JWTUtil.jweEncryption(Constant.NETWORK_TYPE_APP_GATEWAY,cvmInfoStr);
             KYCVerificationTrxInfo.setCvmInfo(cvmInfoStrEnc);
             return this;
         }

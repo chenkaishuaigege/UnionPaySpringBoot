@@ -2,6 +2,7 @@ package com.rrtx.onlinemessages;
 
 
 import com.rrtx.dataobject.CvmInfo;
+import com.rrtx.util.Constant;
 import com.rrtx.util.JWTUtil;
 import com.rrtx.util.JavaUtil;
 import com.rrtx.util.SerializeUtil;
@@ -64,7 +65,7 @@ public class CardEnrollmentTrxInfo implements Serializable {
         }
         public Builder setCvmInfo(CvmInfo cvmInfo_) {
             String cvmInfoStr = SerializeUtil.serialize(cvmInfo_);
-            String cvmInfoStrEnc = JWTUtil.jweEncryptionNew(cvmInfoStr);
+            String cvmInfoStrEnc = JWTUtil.jweEncryption(Constant.NETWORK_TYPE_APP_GATEWAY,cvmInfoStr);
             cardEnrollmentTrxInfo.setCvmInfo(cvmInfoStrEnc);
             return this;
         }
@@ -106,7 +107,7 @@ public class CardEnrollmentTrxInfo implements Serializable {
     public String getPan() {
         if(!JavaUtil.isEmpty(pan)){
             try {
-                return JWTUtil.jweDecryptionNew(pan);
+                return JWTUtil.jweDecryption(Constant.NETWORK_TYPE_APP_GATEWAY,pan);
             } catch (Exception e) {
                 e.printStackTrace();
             }

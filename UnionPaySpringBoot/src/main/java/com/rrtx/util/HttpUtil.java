@@ -19,7 +19,8 @@ public class HttpUtil {
                 //表单内容
                 .body(onlineMessage)
                 //超时，毫秒
-                .timeout(9000).execute();
+                //TODO 超时时间设置的长一些
+                .timeout(900000).execute();
         System.out.println("-------发送信息-------");
         System.out.println("hdeader-UPI-JWS:");
         System.out.println(headerSign);

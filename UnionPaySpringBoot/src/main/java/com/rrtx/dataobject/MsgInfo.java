@@ -18,7 +18,7 @@ public class MsgInfo implements Serializable {
     String msgID;
     String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(Calendar.getInstance().getTime());
     String msgType;
-    String insID = getSingletonMethod().getUpi_appid();;
+    String insID = getSingletonMethod().getUpi_appid();
 
     public Builder builder() {
         return new Builder();
@@ -52,6 +52,11 @@ public class MsgInfo implements Serializable {
         public Builder setMsgType(String msgType_) {
             msgType = msgType_;
             msgInfo.setMsgType(msgType);
+            return this;
+        }
+        public Builder setMsgID(String msgID_) {
+            msgID = msgID_;
+            msgInfo.setMsgID(msgID);
             return this;
         }
 
