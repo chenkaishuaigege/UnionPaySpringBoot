@@ -206,9 +206,9 @@ public class InterfaceTest11_20 {
         MPQRCPaymentEMVTrxInfo trxInfo = new MPQRCPaymentEMVTrxInfo().builder()
                 // 和卡申请一致
                 .setDeviceID("1b5ddc2562a8de5b4e175d418f5b7edf")
-                .setUserID("3329941324335104")
+                .setUserID("3329941100000003")
                 // 卡申请返回
-                .setToken("6291103788756416")
+                .setToken("6291103784111038")
                 //金额/币种
                 .setTrxAmt(ta54)
                 .setTrxCurrency(ta53)
